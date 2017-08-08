@@ -9,4 +9,6 @@ interface PollService {
     List<Token> createPoll(Poll poll)
 
     ResponseEntity deletePoll(Token token)
+
+    ResponseEntity<Poll> getPoll(Token token)
 }

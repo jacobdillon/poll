@@ -19,4 +19,8 @@ class OptionServiceImpl implements OptionService {
     void createOption(Option option, int pollId) {
         optionMapper.createOption(option, pollId)
     }
+
+    List<Option> getOptions(int pollId) {
+        optionMapper.getOptions(pollId)
+    }
 }

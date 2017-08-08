@@ -6,6 +6,9 @@ import org.apache.ibatis.annotations.Insert
 import org.apache.ibatis.annotations.Mapper
 import org.apache.ibatis.annotations.Options
 import org.apache.ibatis.annotations.Param
+import org.apache.ibatis.annotations.Result
+import org.apache.ibatis.annotations.Results
+import org.apache.ibatis.annotations.Select
 import org.springframework.stereotype.Component
 
 @Mapper
@@ -19,4 +22,11 @@ interface PollMapper {
 
     @Delete("DELETE FROM poll.polls WHERE id = #{pollId}")
     void deletePoll(@Param("pollId") int pollId)
+
+    @Select("SELECT * FROM poll.polls WHERE id = #{pollId}")
+    @Results([
+        @Result(property = "createdTime", column = "created_time"),
+        @Result(property = "expiresTime", column = "expires_time")
+    ])
+    Poll getPoll(@Param("pollId") int pollId)
 }

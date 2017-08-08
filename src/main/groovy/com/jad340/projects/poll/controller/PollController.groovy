@@ -9,4 +9,6 @@ interface PollController {
     ResponseEntity<List<Token>> createPoll(Poll poll)
 
     ResponseEntity deletePoll(Token adminToken)
+
+    ResponseEntity<Poll> getPoll(Token token)
 }

@@ -48,4 +48,14 @@ class PollServiceImpl implements PollService {
             new ResponseEntity<>(HttpStatus.NOT_FOUND)
         }
     }
+
+    ResponseEntity<Poll> getPoll(Token token) {
+        if(tokenService.checkExists(token)) {
+            def poll = pollMapper.getPoll(tokenService.getPollId(token))
+            poll.options = optionService.getOptions(poll.id)
+            new ResponseEntity<>(poll, HttpStatus.OK)
+        } else {
+            new ResponseEntity<>(HttpStatus.NOT_FOUND)
+        }
+    }
 }

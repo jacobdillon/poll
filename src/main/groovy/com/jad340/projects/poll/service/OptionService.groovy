@@ -5,4 +5,6 @@ import com.jad340.projects.poll.domain.Option
 interface OptionService {
 
     void createOption(Option option, int pollId)
+
+    List<Option> getOptions(int pollId)
 }

@@ -31,4 +31,9 @@ class PollControllerImpl implements PollController {
     ResponseEntity deletePoll(@RequestBody Token adminToken) {
         pollService.deletePoll(adminToken)
     }
+
+    @RequestMapping(value = "/api/getPoll", method = RequestMethod.POST)
+    ResponseEntity<Poll> getPoll(@RequestBody Token token) {
+        pollService.getPoll(token)
+    }
 }
