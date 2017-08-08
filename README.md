@@ -8,7 +8,7 @@ Jacob Dillon (jad340) - 2017
 ```
 
 
-![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Build Status](https://travis-ci.org/jad340/poll.svg?branch=master)](https://travis-ci.org/jad340/poll)![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 
 ### Database Setup ###
