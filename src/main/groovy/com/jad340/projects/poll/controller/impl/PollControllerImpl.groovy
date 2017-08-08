@@ -1,6 +1,6 @@
-package com.jad340.projects.poll.coordinator.impl
+package com.jad340.projects.poll.controller.impl
 
-import com.jad340.projects.poll.coordinator.PollCoordinator
+import com.jad340.projects.poll.controller.PollController
 import com.jad340.projects.poll.domain.Poll
 import com.jad340.projects.poll.domain.Token
 import com.jad340.projects.poll.service.PollService
@@ -10,16 +10,15 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
-import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class PollCoordinatorImpl implements PollCoordinator {
+class PollControllerImpl implements PollController {
 
     PollService pollService
 
     @Autowired
-    PollCoordinatorImpl(PollService pollService) {
+    PollControllerImpl(PollService pollService) {
         this.pollService = pollService
     }
 

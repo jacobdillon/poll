@@ -1,10 +1,10 @@
-package com.jad340.projects.poll.coordinator
+package com.jad340.projects.poll.controller
 
 import com.jad340.projects.poll.domain.Poll
 import com.jad340.projects.poll.domain.Token
 import org.springframework.http.ResponseEntity
 
-interface PollCoordinator {
+interface PollController {
 
     ResponseEntity<List<Token>> createPoll(Poll poll)
 
