@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Insert
 import org.apache.ibatis.annotations.Mapper
 import org.apache.ibatis.annotations.Param
 import org.apache.ibatis.annotations.Select
+import org.apache.ibatis.annotations.Update
 import org.springframework.stereotype.Component
 
 @Mapper
@@ -16,4 +17,7 @@ interface OptionMapper {
 
     @Select("SELECT * FROM poll.options WHERE poll_id = #{pollId}")
     List<Option> getOptions(@Param("pollId") int pollId)
+
+    @Update("UPDATE poll.options SET votes = votes + 1 WHERE poll_id = #{pollId} AND name = #{option.name}")
+    void vote(@Param("option") Option option, @Param("pollId") int pollId)
 }

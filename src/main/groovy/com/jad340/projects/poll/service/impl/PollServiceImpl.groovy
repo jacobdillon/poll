@@ -40,12 +40,12 @@ class PollServiceImpl implements PollService {
         if(tokenService.checkExists(token)) {
             if(tokenService.isAdmin(token)) {
                 pollMapper.deletePoll(tokenService.getPollId(token))
-                new ResponseEntity<>(HttpStatus.OK)
+                new ResponseEntity(HttpStatus.OK)
             } else {
-                new ResponseEntity<>(HttpStatus.FORBIDDEN)
+                new ResponseEntity(HttpStatus.FORBIDDEN)
             }
         } else {
-            new ResponseEntity<>(HttpStatus.NOT_FOUND)
+            new ResponseEntity(HttpStatus.NOT_FOUND)
         }
     }
 
