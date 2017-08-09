@@ -22,7 +22,7 @@ Run `mysql < MySQLSetup.sql` to setup MySQL database
 - [x] /api/deletePoll (POST) Requests a Token : Returns a HTTP Status
 - [x] /api/getPoll (POST) Requests a Token : Returns a Poll
 - [x] /api/vote (POST) Requests a Token and Option : Returns a HTTP Status
-- [ ] /api/addOption (POST) Requires a Token and Option : Returns a HTTP Status
+- [x] /api/addOption (POST) Requires a Token and Option : Returns a HTTP Status
 - [ ] /api/deleteOption (POST) Requires a Token: Returns a HTTP Status
 - [ ] /api/setName (POST) Requires a Token and String : Returns a HTTP Status
 - [ ] /api/setDescription (POST) Requires a Token and String : Returns a HTTP Status
