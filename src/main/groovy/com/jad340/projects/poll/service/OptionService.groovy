@@ -11,4 +11,6 @@ interface OptionService {
     List<Option> getOptions(int pollId)
 
     ResponseEntity vote(Token token, Option option)
+
+    ResponseEntity addOption(Token token, Option option)
 }

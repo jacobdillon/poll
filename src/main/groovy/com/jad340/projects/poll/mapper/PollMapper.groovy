@@ -1,14 +1,7 @@
 package com.jad340.projects.poll.mapper
 
 import com.jad340.projects.poll.domain.Poll
-import org.apache.ibatis.annotations.Delete
-import org.apache.ibatis.annotations.Insert
-import org.apache.ibatis.annotations.Mapper
-import org.apache.ibatis.annotations.Options
-import org.apache.ibatis.annotations.Param
-import org.apache.ibatis.annotations.Result
-import org.apache.ibatis.annotations.Results
-import org.apache.ibatis.annotations.Select
+import org.apache.ibatis.annotations.*
 import org.springframework.stereotype.Component
 
 @Mapper
@@ -25,8 +18,8 @@ interface PollMapper {
 
     @Select("SELECT * FROM poll.polls WHERE id = #{pollId}")
     @Results([
-        @Result(property = "createdTime", column = "created_time"),
-        @Result(property = "expiresTime", column = "expires_time")
+            @Result(property = "createdTime", column = "created_time"),
+            @Result(property = "expiresTime", column = "expires_time")
     ])
     Poll getPoll(@Param("pollId") int pollId)
 }

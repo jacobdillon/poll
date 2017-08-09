@@ -38,4 +38,17 @@ class OptionServiceImpl implements OptionService {
             new ResponseEntity(HttpStatus.NOT_FOUND)
         }
     }
+
+    ResponseEntity addOption(Token token, Option option) {
+        if(tokenService.checkExists(token)) {
+            if(tokenService.isAdmin(token)) {
+                optionMapper.createOption(option, tokenService.getPollId(token))
+                new ResponseEntity(HttpStatus.CREATED)
+            } else {
+                new ResponseEntity(HttpStatus.FORBIDDEN)
+            }
+        } else {
+            new ResponseEntity(HttpStatus.NOT_FOUND)
+        }
+    }
 }
