@@ -58,4 +58,34 @@ class PollServiceImpl implements PollService {
             new ResponseEntity<>(HttpStatus.NOT_FOUND)
         }
     }
+
+    ResponseEntity setName(Token token, String string) {
+        if(tokenService.checkExists(token)) {
+            if(tokenService.isAdmin(token)) {
+                def updatedPoll = pollMapper.getPoll(tokenService.getPollId(token))
+                updatedPoll.name = string
+                pollMapper.updatePoll(updatedPoll)
+                new ResponseEntity(HttpStatus.OK)
+            } else {
+                new ResponseEntity(HttpStatus.FORBIDDEN)
+            }
+        } else {
+            new ResponseEntity<>(HttpStatus.NOT_FOUND)
+        }
+    }
+
+    ResponseEntity setDescription(Token token, String string) {
+        if(tokenService.checkExists(token)) {
+            if(tokenService.isAdmin(token)) {
+                def updatedPoll = pollMapper.getPoll(tokenService.getPollId(token))
+                updatedPoll.description = string
+                pollMapper.updatePoll(updatedPoll)
+                new ResponseEntity(HttpStatus.OK)
+            } else {
+                new ResponseEntity(HttpStatus.FORBIDDEN)
+            }
+        } else {
+            new ResponseEntity<>(HttpStatus.NOT_FOUND)
+        }
+    }
 }

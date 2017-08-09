@@ -11,4 +11,8 @@ interface PollService {
     ResponseEntity deletePoll(Token token)
 
     ResponseEntity<Poll> getPoll(Token token)
+
+    ResponseEntity setName(Token token, String string)
+
+    ResponseEntity setDescription(Token token, String string)
 }

@@ -1,9 +1,7 @@
 package com.jad340.projects.poll.controller.impl
 
-import com.fasterxml.jackson.databind.ObjectMapper
 import com.jad340.projects.poll.controller.OptionController
-import com.jad340.projects.poll.domain.Option
-import com.jad340.projects.poll.domain.Token
+import com.jad340.projects.poll.domain.view.TokenOption
 import com.jad340.projects.poll.service.OptionService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -23,13 +21,17 @@ class OptionControllerImpl implements OptionController {
     }
 
     @RequestMapping(value = "/api/vote", method = RequestMethod.POST)
-    ResponseEntity vote(@RequestBody String tokenOption) {
-        def objectMapper = new ObjectMapper()
-        def jsonNode = objectMapper.readTree(tokenOption)
+    ResponseEntity vote(@RequestBody TokenOption tokenOption) {
+        optionService.vote(tokenOption.token, tokenOption.option)
+    }
 
-        def token = objectMapper.convertValue(jsonNode.get("token"), Token)
-        def option = objectMapper.convertValue(jsonNode.get("option"), Option)
+    @RequestMapping(value = "/api/addOption", method = RequestMethod.POST)
+    ResponseEntity addOption(@RequestBody TokenOption tokenOption) {
+        optionService.addOption(tokenOption.token, tokenOption.option)
+    }
 
-        optionService.vote(token, option)
+    @RequestMapping(value = "/api/deleteOption", method = RequestMethod.POST)
+    ResponseEntity deleteOption(@RequestBody TokenOption tokenOption) {
+        optionService.deleteOption(tokenOption.token, tokenOption.option)
     }
 }

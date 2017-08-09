@@ -3,6 +3,7 @@ package com.jad340.projects.poll.controller.impl
 import com.jad340.projects.poll.controller.PollController
 import com.jad340.projects.poll.domain.Poll
 import com.jad340.projects.poll.domain.Token
+import com.jad340.projects.poll.domain.view.TokenString
 import com.jad340.projects.poll.service.PollService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -35,5 +36,15 @@ class PollControllerImpl implements PollController {
     @RequestMapping(value = "/api/getPoll", method = RequestMethod.POST)
     ResponseEntity<Poll> getPoll(@RequestBody Token token) {
         pollService.getPoll(token)
+    }
+
+    @RequestMapping(value = "/api/setName", method = RequestMethod.POST)
+    ResponseEntity setName(@RequestBody TokenString tokenString) {
+        pollService.setName(tokenString.token, tokenString.string)
+    }
+
+    @RequestMapping(value = "/api/setDescription", method = RequestMethod.POST)
+    ResponseEntity setDescription(@RequestBody TokenString tokenString) {
+        pollService.setDescription(tokenString.token, tokenString.string)
     }
 }

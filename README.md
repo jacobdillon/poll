@@ -8,7 +8,7 @@ Jacob Dillon (jad340) - 2017
 ```
 
 
-![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Build Status](https://travis-ci.org/jad340/poll.svg?branch=master)](https://travis-ci.org/jad340/poll)![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 
 ### Database Setup ###
@@ -22,7 +22,7 @@ Run `mysql < MySQLSetup.sql` to setup MySQL database
 - [x] /api/deletePoll (POST) Requests a Token : Returns a HTTP Status
 - [x] /api/getPoll (POST) Requests a Token : Returns a Poll
 - [x] /api/vote (POST) Requests a Token and Option : Returns a HTTP Status
-- [ ] /api/deleteOption (POST) Requires a Token: Returns a HTTP Status
-- [ ] /api/addOption (POST) Requires a Token and Option : Returns a HTTP Status
-- [ ] /api/setName (POST) Requires a Token and String : Returns a HTTP Status
-- [ ] /api/setDescription (POST) Requires a Token and String : Returns a HTTP Status
+- [x] /api/addOption (POST) Requires a Token and Option : Returns a HTTP Status
+- [x] /api/deleteOption (POST) Requires a Token: Returns a HTTP Status
+- [x] /api/setName (POST) Requires a Token and String : Returns a HTTP Status
+- [x] /api/setDescription (POST) Requires a Token and String : Returns a HTTP Status
