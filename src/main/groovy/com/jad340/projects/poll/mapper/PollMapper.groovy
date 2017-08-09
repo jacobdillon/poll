@@ -22,4 +22,7 @@ interface PollMapper {
             @Result(property = "expiresTime", column = "expires_time")
     ])
     Poll getPoll(@Param("pollId") int pollId)
+
+    @Update("UPDATE poll.polls SET name = #{poll.name}, description = #{poll.description} WHERE id = #{poll.id}")
+    void updatePoll(@Param("poll") Poll poll)
 }
