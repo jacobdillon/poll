@@ -16,4 +16,7 @@ interface OptionMapper {
 
     @Update("UPDATE poll.options SET votes = votes + 1 WHERE poll_id = #{pollId} AND name = #{option.name}")
     void vote(@Param("option") Option option, @Param("pollId") int pollId)
+
+    @Delete("DELETE FROM poll.options WHERE name = #{option.name} AND poll_id = #{pollId}")
+    void deleteOption(@Param("option") Option option, @Param("pollId") int pollId)
 }

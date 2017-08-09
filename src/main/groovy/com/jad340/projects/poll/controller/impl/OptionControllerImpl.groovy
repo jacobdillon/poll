@@ -29,4 +29,9 @@ class OptionControllerImpl implements OptionController {
     ResponseEntity addOption(@RequestBody TokenOption tokenOption) {
         optionService.addOption(tokenOption.token, tokenOption.option)
     }
+
+    @RequestMapping(value = "/api/deleteOption", method = RequestMethod.POST)
+    ResponseEntity deleteOption(@RequestBody TokenOption tokenOption) {
+        optionService.deleteOption(tokenOption.token, tokenOption.option)
+    }
 }

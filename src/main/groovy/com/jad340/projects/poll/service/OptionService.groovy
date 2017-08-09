@@ -13,4 +13,6 @@ interface OptionService {
     ResponseEntity vote(Token token, Option option)
 
     ResponseEntity addOption(Token token, Option option)
+
+    ResponseEntity deleteOption(Token token, Option option)
 }

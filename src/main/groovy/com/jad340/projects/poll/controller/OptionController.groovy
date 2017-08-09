@@ -8,4 +8,6 @@ interface OptionController {
     ResponseEntity vote(TokenOption tokenOption)
 
     ResponseEntity addOption(TokenOption tokenOption)
+
+    ResponseEntity deleteOption(TokenOption tokenOption)
 }

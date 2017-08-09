@@ -51,4 +51,17 @@ class OptionServiceImpl implements OptionService {
             new ResponseEntity(HttpStatus.NOT_FOUND)
         }
     }
+
+    ResponseEntity deleteOption(Token token, Option option) {
+        if(tokenService.checkExists(token)) {
+            if(tokenService.isAdmin(token)) {
+                optionMapper.deleteOption(option, tokenService.getPollId(token))
+                new ResponseEntity(HttpStatus.OK)
+            } else {
+                new ResponseEntity(HttpStatus.FORBIDDEN)
+            }
+        } else {
+            new ResponseEntity(HttpStatus.NOT_FOUND)
+        }
+    }
 }
