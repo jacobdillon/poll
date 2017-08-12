@@ -23,27 +23,27 @@ class PollControllerImpl implements PollController {
         this.pollService = pollService
     }
 
-    @RequestMapping(value = "/api/createPoll", method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/createPoll", method = RequestMethod.POST)
     ResponseEntity<List<Token>> createPoll(@RequestBody Poll poll) {
         new ResponseEntity<>(pollService.createPoll(poll), HttpStatus.CREATED)
     }
 
-    @RequestMapping(value = "/api/deletePoll", method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/deletePoll", method = RequestMethod.POST)
     ResponseEntity deletePoll(@RequestBody Token adminToken) {
         pollService.deletePoll(adminToken)
     }
 
-    @RequestMapping(value = "/api/getPoll", method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/getPoll", method = RequestMethod.POST)
     ResponseEntity<Poll> getPoll(@RequestBody Token token) {
         pollService.getPoll(token)
     }
 
-    @RequestMapping(value = "/api/setName", method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/setName", method = RequestMethod.POST)
     ResponseEntity setName(@RequestBody TokenString tokenString) {
         pollService.setName(tokenString.token, tokenString.string)
     }
 
-    @RequestMapping(value = "/api/setDescription", method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/setDescription", method = RequestMethod.POST)
     ResponseEntity setDescription(@RequestBody TokenString tokenString) {
         pollService.setDescription(tokenString.token, tokenString.string)
     }
