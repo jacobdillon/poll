@@ -20,11 +20,11 @@ Run `mysql < MySQLSetup.sql` to setup MySQL database
 
 
 ### API calls ###
-- [x] /api/createPoll (POST) Requests a Poll : Returns a Token
-- [x] /api/deletePoll (POST) Requests a Token : Returns a HTTP Status
-- [x] /api/getPoll (POST) Requests a Token : Returns a Poll
-- [x] /api/vote (POST) Requests a Token and Option : Returns a HTTP Status
-- [x] /api/addOption (POST) Requires a Token and Option : Returns a HTTP Status
-- [x] /api/deleteOption (POST) Requires a Token: Returns a HTTP Status
-- [x] /api/setName (POST) Requires a Token and String : Returns a HTTP Status
-- [x] /api/setDescription (POST) Requires a Token and String : Returns a HTTP Status
+- [x] /v1/createPoll (POST) Requests a Poll : Returns a Token
+- [x] /v1/deletePoll (POST) Requests a Token : Returns a HTTP Status
+- [x] /v1/getPoll (POST) Requests a Token : Returns a Poll
+- [x] /v1/vote (POST) Requests a Token and Option : Returns a HTTP Status
+- [x] /v1/addOption (POST) Requires a Token and Option : Returns a HTTP Status
+- [x] /v1/deleteOption (POST) Requires a Token: Returns a HTTP Status
+- [x] /v1/setName (POST) Requires a Token and String : Returns a HTTP Status
+- [x] /v1/setDescription (POST) Requires a Token and String : Returns a HTTP Status
