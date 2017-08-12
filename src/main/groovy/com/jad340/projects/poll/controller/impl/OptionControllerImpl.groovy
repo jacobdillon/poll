@@ -20,17 +20,17 @@ class OptionControllerImpl implements OptionController {
         this.optionService = optionService
     }
 
-    @RequestMapping(value = "/api/vote", method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/vote", method = RequestMethod.POST)
     ResponseEntity vote(@RequestBody TokenOption tokenOption) {
         optionService.vote(tokenOption.token, tokenOption.option)
     }
 
-    @RequestMapping(value = "/api/addOption", method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/addOption", method = RequestMethod.POST)
     ResponseEntity addOption(@RequestBody TokenOption tokenOption) {
         optionService.addOption(tokenOption.token, tokenOption.option)
     }
 
-    @RequestMapping(value = "/api/deleteOption", method = RequestMethod.POST)
+    @RequestMapping(value = "/v1/deleteOption", method = RequestMethod.POST)
     ResponseEntity deleteOption(@RequestBody TokenOption tokenOption) {
         optionService.deleteOption(tokenOption.token, tokenOption.option)
     }
