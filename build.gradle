@@ -14,7 +14,7 @@ plugins {
 }
 
 group 'com.jad340.projects'
-version '1.0-SNAPSHOT'
+version '0.0.1'
 
 repositories {
     mavenCentral()
@@ -31,5 +31,5 @@ dependencies {
 
 jar {
     baseName = 'poll'
-    version =  '1.0-SNAPSHOT'
+    version =  '0.0.1'
 }
