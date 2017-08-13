@@ -13,6 +13,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/main/frontend" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../src/main/frontend/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/../../src/main/frontend/tmp" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

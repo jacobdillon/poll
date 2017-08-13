@@ -12,12 +12,26 @@ Jacob Dillon (jad340) - 2017
 
 Website to create, view, and vote on polls.
 
+Build using [angular](https://angular.io/), [spring boot](https://projects.spring.io/spring-boot/), and [mybatis](http://www.mybatis.org/mybatis-3/)
+
+## Building ##
+
+### Backend ###
+
+Run `gradlew jar && gradlew assemble` in the root directory of this project
+
+### Frontend ###
+
+Run `ng build` in the `/src/main/frontend` directory
 
 ### Database Setup ###
+
 **WARNING: RUNNING `MySQLSetup.sql` WILL DROP ANY SCHEMA NAMED `poll` IN YOUR MYSQL SERVER**
 
 Run `mysql < MySQLSetup.sql` to setup MySQL database
 
+
+## Todo ##
 
 ### API calls ###
 - [x] /v1/createPoll (POST) Requests a Poll : Returns a Token
