@@ -7,10 +7,8 @@
 Jacob Dillon (jad340) - 2017
 ```
 
+
 [![Build Status](https://travis-ci.org/jad340/poll.svg?branch=master)](https://travis-ci.org/jad340/poll)![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
-
-
-Website to create, view, and vote on polls.
 
 Build using [angular](https://angular.io/), [spring boot](https://projects.spring.io/spring-boot/), and [mybatis](http://www.mybatis.org/mybatis-3/)
 
